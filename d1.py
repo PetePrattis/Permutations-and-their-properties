@@ -1,30 +1,30 @@
 # ! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#Author Παναγιώτης Πράττης/Panagiotis Prattis
+
+'''
+Write a program that receives an input with a permutation μ of [n] in the list format from natural numbers 
+separated by the space character (eg 7 10 9 11 2 1 3 5 6 8 4) and prints some properties of the permutation μ.
+'''
+
 import random
 
-'''
-Π15120 Παναγιώτης Πράττης
-Η εργασία δημιουργεί μια μετάθεση η οποία έχει τυχαίο μήκος n, κάνοντας ανακάτεμα
-μια λίστας με αριθμούς απο 1 έως n και στην συνέχεια υπολογίζει κα ιεμφανίζει τα ζητούμενα
-'''
-    
-
 #Main
-print("Θα δημιουργηθεί μια μετάθεση τυχαίου μήκους.")
+print("A random length permutation will be created.")
 m = []
 m1=[]
 m2=[]
 
 l = random.randint(5,15)
-print("Ερώτημα i):")
-print("Το μήκος της μετάθεσης ειναι: ", l)
+print("Exercise 1):")
+print("The length of μ is: ", l)
 for i in range(l):
     m1.append(i+1)
     m2.append(i+1)
     
 random.shuffle(m2)
-print("Η μετάθεση είναι η εξής:")
+print("The permutation μ is:")
 print(m1)
 print(m2)
 
@@ -35,8 +35,8 @@ reverse_m2 = []
 for i in range(l):
     reverse_m2.append(i+1)
     
-print("Ερώτημα ii):")
-print("Η αντίστροφη της μετάθεσης:")
+print("Exercise 2):")
+print("The reverse of μ is:")
 print(reverse_m1)
 print(reverse_m2)
     
@@ -72,8 +72,8 @@ while completed == False:
     for i in range(l):
         if m1[i] == x:
             x = i
-print("Ερώτημα iii):")   
-print("Η μετάθεση ως γινόμενο ξένων κύκλων είναι η εξής:")
+print("Exercise 3):")   
+print("The μ as the product of cycles is:")
 print(c)
 n = len(c)
 nc = []
@@ -84,8 +84,8 @@ for i in range(n):
         for j in range(len(c[i]) - 1):
             nc.append([c[i][0],c[i][j+1]])
 
-print("Ερώτημα iv):")
-print("Η μετάθεση ως γινόμενο αντιμεταθέσεων είναι η εξής:")
+print("Exercise 4):")
+print("The μ as a product  of transpositions is:")
 print(nc)
 s = len(nc)
 sgn = 0
@@ -94,11 +94,11 @@ if s % 2 == 0:
 else:
     sgn = -1
 
-print("Ερώτημα v):")
+print("Exercise 5):")
 if sgn == 1:
-    print("Η μετάθεση είναι άρτια διότι έχει άρτιο πλήθος αντιμεταθέσεων,", s, ".")
+    print("The parity of μ is even because it has an even number of transpositions,", s, ".")
 else:
-    print("Η μετάθεσή μου είναι περιττή διότι έχει περιττό πλήθος αντιμεταθέσεων,", s, ".")
+    print("The parity of μ is odd because it has an odd number of transpositions,", s, ".")
                     
         
     
